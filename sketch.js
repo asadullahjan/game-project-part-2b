@@ -40,11 +40,23 @@ function setup()
 		posY : 100 ,
 		scale : 1.2
 	}
+	mountain = {
+		posX : 300,
+		posY: 256
+	}
 }
 
 function draw()
 {
-	background(100, 155, 255); //fill the sky blue
+	background(48,25,52); //fill the sky blue
+
+	/////////mountain//////////////
+	noStroke();
+	fill(121,99,66);
+	triangle(mountain.posX,mountain.posY,mountain.posX-100,mountain.posY+176,mountain.posX+100,mountain.posY+176);
+	fill(255);
+	triangle(mountain.posX,mountain.posY,mountain.posX-53,mountain.posY+94,mountain.posX+53,mountain.posY+94);
+
 
 	///////////////cloud////////////////
 	noStroke();
@@ -64,7 +76,7 @@ function draw()
 			cloud.posY,
 			50*cloud.scale);
 
-			
+
 
 	//////////////////TREE////////////
 	noStroke();
@@ -87,14 +99,15 @@ function draw()
 			treePos_y-90,
 			70);
 
-			noStroke();
-			fill(0, 155, 0);
-			rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
+	///////green ground///////
+	noStroke();
+	fill(0, 155, 0);
+	rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
 
 
 	//////////canyon///////////
 	noStroke();
-	fill(100, 155, 255);
+	fill(48,25,52);
 	rect(canyon.x_pos,floorPos_y,canyon.width,200);
 	fill(15,94,156);
 	rect(canyon.x_pos,floorPos_y+100,canyon.width,100);
