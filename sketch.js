@@ -30,22 +30,59 @@ function setup()
 	gameChar_x = width/2;
 	gameChar_y = floorPos_y;
 
-	treePos_x = width/2;
-	treePos_y = height/2;
+	treePos_x = width/5;
+	treePos_y = height/1.5;
 }
 
 function draw()
 {
 	background(100, 155, 255); //fill the sky blue
 
-	noStroke();
-	fill(0, 155, 0);
-	rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
+	
 
+	//////////////////TREE////////////
+	noStroke();
+	fill(128,113,83);
+	ellipse(treePos_x,
+			treePos_y,
+			40,
+			195);
+	fill(58, 95, 11 );
+	ellipse(treePos_x-40,
+			treePos_y-60,
+			70);
+	ellipse(treePos_x,
+			treePos_y-40,
+			70);
+	ellipse(treePos_x+40,
+			treePos_y-60,
+			70);
+	ellipse(treePos_x,
+			treePos_y-90,
+			70);
+
+			noStroke();
+			fill(0, 155, 0);
+			rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
+
+	///////////game character///////////////
+	fill (120,120,120);
+	ellipse(gameChar_x,gameChar_y-56,40);
+	fill(0);
+	ellipse(gameChar_x-10,gameChar_y-56,5);
+	ellipse(gameChar_x+10,gameChar_y-56,5);
+
+	fill (0,0,225);
+	rect (gameChar_x-15,gameChar_y-37,30,30);
+
+	fill (0);
+	rect(gameChar_x-15,gameChar_y-7,10,10);
+	rect(gameChar_x+5,gameChar_y-7,10,10);
 }
 
 function mousePressed()
 {
-
+	gameChar_x = mouseX;
+	gameChar_y = mouseY;
 
 }
