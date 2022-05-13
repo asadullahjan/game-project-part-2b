@@ -34,6 +34,7 @@ function setup()
 	treePos_y = height/1.5;
 
 	canyon = {x_pos:50,width: 100};
+	collectable = {x_pos: 400, y_pos: 375, size: 30};
 }
 
 function draw()
@@ -75,6 +76,15 @@ function draw()
 	fill(15,94,156);
 	rect(canyon.x_pos,floorPos_y+100,canyon.width,100);
 	
+	//////////collectable////////
+	strokeWeight(2);
+	stroke(0,255,0);
+	line(collectable.x_pos+3,collectable.y_pos,collectable.x_pos+7,collectable.y_pos-collectable.size);
+	noStroke();
+	fill(255,0,0);
+	ellipse(collectable.x_pos,collectable.y_pos+5,collectable.size/2,collectable.size);
+	ellipse(collectable.x_pos+7,collectable.y_pos+5,collectable.size/2,collectable.size);
+
 
 	///////////game character///////////////
 	fill (120,120,120);
