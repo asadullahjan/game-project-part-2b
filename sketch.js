@@ -35,13 +35,36 @@ function setup()
 
 	canyon = {x_pos:50,width: 100};
 	collectable = {x_pos: 400, y_pos: 375, size: 30};
+	cloud = {
+		posX : 180 ,
+		posY : 100 ,
+		scale : 1.2
+	}
 }
 
 function draw()
 {
 	background(100, 155, 255); //fill the sky blue
 
-	
+	///////////////cloud////////////////
+	noStroke();
+	fill(255);
+	ellipse(cloud.posX,
+			cloud.posY,
+			60*cloud.scale);
+	ellipse(cloud.posX+30*cloud.scale,
+			cloud.posY - 10,
+			60*cloud.scale,
+			80*cloud.scale);
+	ellipse(cloud.posX+60*cloud.scale,
+			cloud.posY -5 ,
+			50*cloud.scale,
+			60*cloud.scale);
+	ellipse(cloud.posX+90*cloud.scale,
+			cloud.posY,
+			50*cloud.scale);
+
+			
 
 	//////////////////TREE////////////
 	noStroke();
