@@ -32,6 +32,8 @@ function setup()
 
 	treePos_x = width/5;
 	treePos_y = height/1.5;
+
+	canyon = {x_pos:50,width: 100};
 }
 
 function draw()
@@ -65,6 +67,15 @@ function draw()
 			fill(0, 155, 0);
 			rect(0, floorPos_y, height, width - floorPos_y); //draw some green ground
 
+
+	//////////canyon///////////
+	noStroke();
+	fill(100, 155, 255);
+	rect(canyon.x_pos,floorPos_y,canyon.width,200);
+	fill(15,94,156);
+	rect(canyon.x_pos,floorPos_y+100,canyon.width,100);
+	
+
 	///////////game character///////////////
 	fill (120,120,120);
 	ellipse(gameChar_x,gameChar_y-56,40);
@@ -78,6 +89,8 @@ function draw()
 	fill (0);
 	rect(gameChar_x-15,gameChar_y-7,10,10);
 	rect(gameChar_x+5,gameChar_y-7,10,10);
+
+	
 }
 
 function mousePressed()
